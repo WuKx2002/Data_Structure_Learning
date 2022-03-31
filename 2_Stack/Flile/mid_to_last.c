@@ -29,7 +29,6 @@ int main(void)
 		else if(str[i] == ')')
 			printf("%c", pop());
 	}
-	printf("\n");
 
 	return 0;
 }
