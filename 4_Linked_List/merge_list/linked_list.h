@@ -11,7 +11,7 @@ extern struct node* tail;
 struct node
 {
     int elem;
-    struct node* next;
+    struct node* next
 };
 
 void create_list(int elem);

@@ -1,2 +1,5 @@
-﻿  merge_list.c
-  merge_list.vcxproj -> C:\Users\Wu Kaixiang\Desktop\merge_list\x64\Debug\merge_list.exe
+﻿  linked_list.c
+D:\Data_Structure_Learning\4_Linked_List\merge_list\linked_list.h(15,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  merge_list.c
+D:\Data_Structure_Learning\4_Linked_List\merge_list\linked_list.h(15,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  正在生成代码...

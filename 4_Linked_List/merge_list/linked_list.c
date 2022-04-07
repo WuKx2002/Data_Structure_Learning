@@ -35,7 +35,7 @@ void insert_node(int pos, int elem)
     if (pos == 0)
     {
         p->elem = elem;
-        p->next = head->next;
+        p->next = head;
 
         head = p;
     }
