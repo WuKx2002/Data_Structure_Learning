@@ -1,0 +1,5 @@
+﻿  demo.c
+  lined_list.c
+D:\Data_Structure_Learning\4_Linked_List\circular_linked_list\lined_list.c(36,1): warning C4133: “初始化”: 从“nnode *”到“node *”的类型不兼容
+  正在生成代码...
+  circular_linked_list.vcxproj -> D:\Data_Structure_Learning\4_Linked_List\circular_linked_list\x64\Debug\circular_linked_list.exe
