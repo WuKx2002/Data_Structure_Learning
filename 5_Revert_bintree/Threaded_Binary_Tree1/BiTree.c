@@ -167,9 +167,9 @@ Tree in_threading_bitree_pre_node(const Tree node)
 		nd = node->ltree;
 		while (nd->rflag == 0)
 		{
-			nd = nd->ltree;
-			ret = nd;
+			nd = nd->rtree;
 		}
+		ret = nd;
 	}
 	return ret;
 }
