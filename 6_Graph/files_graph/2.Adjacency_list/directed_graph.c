@@ -3,46 +3,46 @@
 
 #define MAX 100
 
-struct AdjNode
+struct Adjnode
 {
 	int index;
-	struct AdjNode *next;
+	struct Adjnode *next;
 };
 
-struct VexNode
+struct Vexnode
 {
 	char node;
-	struct AdjNode *first;
+	struct Adjnode *first;
 };
 
-struct ALG_Graph
+struct ALG_graph
 {
 	int vex_num, edge_num;
-	struct VexNode Vex[MAX];
+	struct Vexnode Vex[MAX];
 };
 
-struct ALG_Graph *Create_ALG_Graph(void);
-int search_vex(struct ALG_Graph *graph, char c);
-void create_adj_node_list(struct ALG_Graph *graph, int i, int j);
-void Show_ALG_Graph(struct ALG_Graph *graph);
+struct ALG_graph *Create_ALG_graph(void);
+int search_vex(struct ALG_graph *graph, char c);
+void create_adj_node_list(struct ALG_graph *graph, int i, int j);
+void Show_ALG_graph(struct ALG_graph *graph);
 
 int main(void)
 {
-	struct ALG_Graph *d_graph;
-	d_graph = Create_ALG_Graph();
-	Show_ALG_Graph(d_graph);
+	struct ALG_graph *d_graph;
+	d_graph = Create_ALG_graph();
+	Show_ALG_graph(d_graph);
 
 	return 0;
 }
 
-struct ALG_Graph *Create_ALG_Graph(void)
+struct ALG_graph *Create_ALG_graph(void)
 {
 	int i, j;
 	char u, v;
 
-	struct ALG_Graph *graph;
+	struct ALG_graph *graph;
 
-	graph = (struct ALG_Graph *)malloc(sizeof(struct ALG_Graph));
+	graph = (struct ALG_graph *)malloc(sizeof(struct ALG_graph));
 
 	printf("Please enter the number of vex: ");
 	scanf("%d", &graph->vex_num);
@@ -84,7 +84,7 @@ struct ALG_Graph *Create_ALG_Graph(void)
 	return graph;
 }
 
-int search_vex(struct ALG_Graph *graph, char c)
+int search_vex(struct ALG_graph *graph, char c)
 {
 	int i;
 
@@ -93,24 +93,23 @@ int search_vex(struct ALG_Graph *graph, char c)
 		if(c == graph->Vex[i].node)
 			return i;
 	}
-
 	return -1;
 }
 
-void create_adj_node_list(struct ALG_Graph *graph, int i, int j)
+void create_adj_node_list(struct ALG_graph *graph, int i, int j)
 {
-	struct AdjNode *s = (struct AdjNode *)malloc(sizeof(struct AdjNode));
+	struct Adjnode *s = (struct Adjnode *)malloc(sizeof(struct Adjnode));
 	s->index = j;
 	s->next = graph->Vex[i].first;
 	graph->Vex[i].first = s;
 }
 
-void Show_ALG_Graph(struct ALG_Graph *graph)
+void Show_ALG_graph(struct ALG_graph *graph)
 {
 	int i;
-	struct AdjNode *t;
+	struct Adjnode *t;
 
-	printf("Show the ALG Graph:\n");
+	printf("Show the ALG graph:\n");
 
 	for(i = 0; i < graph->vex_num; i++)
 	{

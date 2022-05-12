@@ -74,7 +74,7 @@ struct AMG_graph *create_AMG_graph(void)
         j = search_vex(p, v);
         
         if (i != -1 && j != -1)
-            p->Edge[i][j] = 1;
+            p->Edge[i][j] = p->Edge[j][i] = 1;
         else
         {
             printf("Enter Wrong !\nPlease try again !");
