@@ -78,6 +78,7 @@ struct ALG_graph *Create_ALG_graph(void)
 
         if (i != -1 && j != -1)
             create_adj_node_list(i, j, graph);
+            create_adj_node_list(j, i, graph);
         else
         {
             printf("Error! Please enter again !");

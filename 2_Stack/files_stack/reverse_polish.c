@@ -13,7 +13,7 @@ int main(void)
 	char a[100];
 	int n;
 	int i;
-	int n1, n2;
+	int num1, num2;
 
 	printf("Please enter a reverse polish expression:\n");
 	gets(a);
@@ -25,18 +25,18 @@ int main(void)
 			push(a[i] - '0');
 		else
 		{
-			n2 = pop();
-			n1 = pop();
+			num2 = pop();
+			num1 = pop();
 			switch(a[i])
 			{
 				case '+':
-					push(n1 + n2);
+					push(num1 + num2);
 					break;
 				case '-':
-					push(n1 - n2);
+					push(num1 - num2);
 					break;
 				case '*':
-					push(n1 * n2);
+					push(num1 * num2);
 					break;
 			}
 		}

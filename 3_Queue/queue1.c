@@ -35,11 +35,11 @@ a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7]
 #define SIZE 1000
 
 void enqueue(char c);
-void dequeue(void);
+char dequeue(void);
 int isEmpty(void);
 
 char queue[SIZE];
-
+int front = 0, rear = 0;
 int main(void)
 {
     
@@ -50,7 +50,7 @@ void enqueue(char c)
 {
     queue[rear++] = c;
 }
-void dequeue(void);
+char dequeue(void)
 {
     return queue[front++];
 }
