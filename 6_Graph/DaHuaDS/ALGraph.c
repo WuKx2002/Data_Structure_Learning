@@ -35,7 +35,6 @@ void CreatALGraph(ALGraph *G)
 void BFS(ALGraph *G)
 {
     int i;
-    int visited[MAXVEX];
     EdgeNode *p;
 
     front = rear = 0;
@@ -65,4 +64,30 @@ void BFS(ALGraph *G)
         }
     }
     
+}
+
+void DFS(ALGraph *G, int i)
+{
+    EdgeNode *p;
+    visited[i] = 1;
+    printf("%c", G->vexs[i].data);
+    p = G->vexs[i].first;
+    while (p)
+    {
+        if (!visited[p->index])
+            DFS(G, p->index);
+        p = p->next;
+    }
+}
+
+void DFSTraverse(ALGraph *G)
+{
+    int i;
+    for (i = 0; i < G->numNodes; i++)
+        visited[i] = 0;
+    for (i = 0; i < G->numNodes; i++)
+    {
+        if (!visited[i])
+            DFS(G, i);
+    }
 }

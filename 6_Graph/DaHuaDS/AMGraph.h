@@ -15,7 +15,11 @@ typedef struct
     int numNodes, numEdges;
 }AMGraph;
 
+int visited[MAXVEX];
+
 void CreatAMGraph(AMGraph *G);
 void BFS(AMGraph *G);
+void DFS(AMGraph *G, int i);
+void DFSTraverse(AMGraph *G);
 
 #endif

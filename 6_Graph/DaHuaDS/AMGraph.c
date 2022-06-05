@@ -30,8 +30,7 @@ void CreatAMGraph(AMGraph *G)
 void BFS(AMGraph *G)
 {
     int i, j;
-    int visited[MAXVEX];
-    
+
     front = rear = 0;
     for (i = 0; i < G->numNodes; i++)
         visited[i] = 0;
@@ -54,5 +53,31 @@ void BFS(AMGraph *G)
                 }
             }
         }
+    }
+}
+
+void DFS(AMGraph *G, int i)
+{
+    int j;
+    visited[i] = 1;
+    printf("%c", G->vexs[i]);
+    for (j = 0; j < G->numNodes; j++)
+    {
+        if (G->arc[i][j] == 1 && !visited[j])
+            DFS(G, j);
+    }
+}
+
+void DFSTraverse(AMGraph *G)
+{
+    int i;
+    for (i = 0; i < G->numNodes; i++)
+    {
+        visited[i] = 0;
+    }
+    for (i = 0; i < G->numNodes; i++)
+    {
+        if (!visited[i])
+            DFS(G, i);
     }
 }

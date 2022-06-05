@@ -26,7 +26,12 @@ typedef struct
     int numNodes, numEdges;
 }ALGraph;
 
+int visited[MAXVEX];
+
 void CreatALGraph(ALGraph *G);
 void BFS(ALGraph *G);
+void DFS(ALGraph *G, int i);
+void DFSTraverse(ALGraph *G);
+
 
 #endif
